@@ -12,10 +12,10 @@ class Table2 extends Component {
     super(props);  
     }
 
-     
+     // Render result data
   render() {  
     return (  
-      
+     
         <tr>
             <td >  
                     {this.props.obj.Reg_NO}  

@@ -29,7 +29,7 @@ const Home = () => {
 
         <h4 className="center">Home</h4>
         
-            
+        {/* Image slider */}    
         <AliceCarousel autoPlay autoPlayInterval="2000">
       <img src={Background6} className="sliderimg"/>
       <img src={Background1} className="sliderimg"/>

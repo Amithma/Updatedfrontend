@@ -16,17 +16,12 @@ import AddPO from './components/PO/AddPO';
 import POlist from './components/PO/POlsit'
 import AsComponentList from './components/AssignmentComponents/AsComponentList';
 import AddAsComponent from './components/AssignmentComponents/AddAsComponent';
-import EditLO from './components/LO/EditLOs';
+
 import FormA from './components/AssignmentComponents/FormA';
 import Summary from './components/Lecturer/Summary';
 import Summary2 from './components/Lecturer/Summary2';
 import Summary3 from './components/Lecturer/Summary3';
 
-
-
-// const [loading, setLoading] = useState(true);
-// setLoading(false);
-// if (loading) return <LoadingComponent content='Loading app' />
 
 class App extends Component {
   render() {
@@ -48,7 +43,6 @@ class App extends Component {
           <Route path='/POlist' component={POlist}/>
           <Route path='/Ascomponent/:value' component={AsComponentList}/>
           <Route path= '/AddAsComponent/:Moduleid' component={AddAsComponent} />
-          <Route path='/EditLO/:vlid' component={EditLO}/>
           <Route path='/formA/:ModuleId' component={FormA}/>
           <Route path='/Summary' component={Summary}/>
           <Route path='/Summary2' component={Summary2}/>
@@ -59,7 +53,6 @@ class App extends Component {
       </div>
       </BrowserRouter>
     );
-  ///:vloid
 }
 }
 

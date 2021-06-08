@@ -17,7 +17,7 @@ state:'',
 } 
 
 }   
-Addcourse=()=>{  
+Addcourse=()=>{  //creating a new course
 
   axios.post('https://oberuhunaapi.azurewebsites.net//api/modules', {ModuleId:this.state.ModuleId,
   Name:this.state.Name,
@@ -37,7 +37,8 @@ this.props.history.push('/Courselist')
 alert("Error!! Data Not saved. Please fill all the feilds")})
 
 }  
-             
+
+// map data save data from input to state             
 handleChange= (e)=> {  
 this.setState({[e.target.name]:e.target.value});  
 }  
@@ -77,6 +78,8 @@ return (     <Container className="App">
     <FormGroup row>  
       <Label for="type" sm={2}>Type of the Module</Label>  
       <Col sm={10}>  
+
+      {/* Dropdown for selecting course type */}
       <select className="form-control mb-3" onChange={this.handleChange1}>
           <option value=""></option>
           <option value="Core">Core</option>
@@ -92,6 +95,7 @@ return (     <Container className="App">
     <FormGroup row>  
       <Label for="state" sm={2}>State of the Module</Label>  
       <Col sm={10}>  
+      {/* dropdown for selecting the course type */}
         <select className="form-control mb-3" onChange={this.handleChange2}>
             <option value=""></option>
             <option value="GPA">GPA</option>

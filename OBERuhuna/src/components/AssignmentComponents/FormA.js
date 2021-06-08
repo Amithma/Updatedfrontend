@@ -48,6 +48,7 @@ export default class FormA extends Component {
 
     Addsummary=()=>{
       debugger;
+      //Update module data according to the summary
       axios.put('https://oberuhunaapi.azurewebsites.net/api/modules/'+this.props.match.params.ModuleId, 
       {
         
@@ -107,7 +108,8 @@ export default class FormA extends Component {
         } );
     }
 
-    //Calaculating H M L total marks 
+    //Calaculating H M L total marks by adding the LO weight and Respective H M L state value
+     
 
 sumcal1(LO){
   
@@ -505,9 +507,9 @@ renderrows=() => {
               </tr>  
               </thead>
               <tbody>
-                  {this.renderrows()}
+                  {this.renderrows()}   
                   <td></td>
-                  <td>H</td>
+                  <td>H</td>    {/* Data for H count */}
                   <td>{this.state.ph1}</td>
                   <td>{this.state.ph10}</td>
                   <td>{this.state.ph11}</td>
@@ -522,7 +524,7 @@ renderrows=() => {
                   <td>{this.state.ph9}</td>
                   <tr>
                     <td></td>
-                    <td>M</td>
+                    <td>M</td>  {/* Data for M count */}
                     <td>{this.state.pm1.toFixed(2)}</td>
                     <td>{this.state.pm10.toFixed(2)}</td>
                     <td>{this.state.pm11.toFixed(2)}</td>
@@ -538,7 +540,7 @@ renderrows=() => {
                   </tr>
                   <tr>
                     <td></td>
-                    <td>L</td>
+                    <td>L</td>    {/* Data for L count */}
                     <td>{this.state.pl1.toFixed(2)}</td>
                     <td>{this.state.pl10.toFixed(2)}</td>
                     <td>{this.state.pl11.toFixed(2)}</td>
@@ -574,7 +576,7 @@ renderrows=() => {
          
           
           <div class="column col-md-4 offset-md-8">
-            <button   type="button" onClick={this.Addsummary} className="btn btn-success">Approve</button>  
+            <button   type="button" onClick={this.Addsummary} className="btn btn-success">Approve</button>   {/* Approve button to update module data */}
           </div>
         </div>         
      </div>  

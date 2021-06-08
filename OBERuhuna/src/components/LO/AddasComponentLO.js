@@ -9,6 +9,7 @@ export default class AddasComponentLO extends Component {
       super(props);  
       this.state = {business: []};  
     }  
+    // This file display the LOs in add Assessment component file
     componentDidMount(){  
       debugger;  
       axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.dataFromParent)  

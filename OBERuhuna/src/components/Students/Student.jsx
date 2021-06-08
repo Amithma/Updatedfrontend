@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './logo.jpg';
+import Logo from '../../photos/logo.jpg';
 import { Route, BrowserRouter,Link,Switch} from 'react-router-dom';
 import Courselist from './Courselist';
 import Filter2 from './FilterResults';
@@ -33,19 +33,19 @@ import { Dropdown,DropdownButton} from 'react-bootstrap';
 
               
               <DropdownButton id="dropdown-basic-button" title={user} style ={{float:right}}>
-  <Dropdown.Item href="/Student"> Dashboard</Dropdown.Item>
-  <Dropdown.Item  onClick={onLogoutHandler}>Logout</Dropdown.Item>
-</DropdownButton> 
+                <Dropdown.Item href="/Student"> Dashboard</Dropdown.Item>
+                <Dropdown.Item  onClick={onLogoutHandler}>Logout</Dropdown.Item>
+              </DropdownButton> 
           </h1>
                         
           <h2><strong>OBE Curriculum Plannig Tool</strong></h2>
           
         </div>
-      <div className="container">
+      <div >
         <h3 className="center">Student</h3>
 
-        <BrowserRouter>
-        <div className="container">  
+        <BrowserRouter>{/*Navigation bar */}
+        <div >  
         <nav className="navbar-expand-sm navheader" >  
           <div className="collapse navbar-collapse">  
             <ul className="navbar-nav mr-auto">   
@@ -55,6 +55,7 @@ import { Dropdown,DropdownButton} from 'react-bootstrap';
             </ul>  
           </div>  
         </nav> <br />  
+        {/* paths for the links */}
         <Switch>  
           <Route path='/Student/Course' component={Courselist} /> 
           <Route path='/results/:moduleId' component={Filter2} />

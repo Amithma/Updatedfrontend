@@ -32,6 +32,13 @@ export default class Courselist extends Component {
         <div>  
         
           <table className="table table-striped" style={{ marginTop: 10 }}>    
+          <thead>  
+              <tr>  {/* Table headers for course list */}
+                <th>CourseId</th>  
+                <th>Name</th>  
+                <th colSpan="4">Action</th>  
+              </tr>  
+            </thead>  
             <tbody>  
              { this.tabRow() }   
             </tbody>  

@@ -33,15 +33,14 @@ class AddAsComponent extends React.Component{
   p10:'',
   p11:'',
   p12:'',
-  error:1
   } 
   
   }   
 
   async getoptions(){
-    const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.Moduleid);
+    const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.Moduleid);  //get LOs related to the modules
     const data =res.data
-  
+    console.log(res.data);
  const options = data.map(d=> ({
    "num": d.id,
     "label" :d.loid,
@@ -66,7 +65,7 @@ class AddAsComponent extends React.Component{
 }
 
 async getpos(){
-  const res1 =await axios.get('https://oberuhunaapi.azurewebsites.net/api/POes1');
+  const res1 =await axios.get('https://oberuhunaapi.azurewebsites.net/api/POes1');     //get POID 
   const data =res1.data
 console.log(res1.data)
 const options1 = data.map(p=> ({
@@ -98,7 +97,7 @@ handleChange1 = (e)=> {
 
   handleChange2 = (s)=> {  
     this.setState({
-      poid:s.po,
+      poid: s.po,
 
    });  
     }
@@ -107,8 +106,9 @@ componentDidMount ()
 {
   
   this.getpos()
-  this.getoptions()
+ this.getoptions()
 }
+// creating new assignment components
   AddAsComponent=()=>{  
     
       {
@@ -126,6 +126,7 @@ componentDidMount ()
         
       alert("Error!! Data Not saved. Please Check the input feilds")})
     }
+    // updating the LO marks by adding marks from Assessment component
     if((this.state.ascomponent!='')&&(this.state.poid!='')){
       axios.put('https://oberuhunaapi.azurewebsites.net//api/LOes1/'+this.state.id, {
       lmarks:parseInt(this.state.marks)+parseInt(this.state.mks) ,
@@ -154,19 +155,19 @@ componentDidMount ()
                 }  
         )
 
-        .catch((err) => {
+        .catch((err) => {  //Error handling
           console.error(err);
         alert("Invalid operation! Please select a LO")})
   }     
 
   }
-
+// close when cancel button pressed
   onClose = () => {
       this.props.history.push(`/AsComponent/${this.props.match.params.Moduleid}`);
   }
          
       
-
+// mappong data to state
   handleChange= (e)=> {  
   this.setState({[e.target.name]:e.target.value});  
   }  
@@ -239,10 +240,10 @@ componentDidMount ()
       </Col>
         <FormGroup row>
             <div class="column">
-                <AddasComponentLO  dataFromParent = {this.props.match.params.Moduleid}/> 
+                <AddasComponentLO  dataFromParent = {this.props.match.params.Moduleid}/> {/*child components to display LOs*/ }
             </div>
             <div class="column">
-                <AddasComponentPO  /> 
+                <AddasComponentPO  />   {/*child components to display POs*/ }
             </div>
        </FormGroup>  
     </Form>  

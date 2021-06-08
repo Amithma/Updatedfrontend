@@ -71,21 +71,31 @@ class AsComponentTable extends Component {
           </div>      
           
             <td >  
+            <div style={{ textAlign:"center" }}>
               {this.props.obj.loid}  
+              </div>
             </td> 
 
            <td >  
+           <div style={{ textAlign:"center" }}>
               {this.props.obj.poid}  
+              </div>
             </td>
 
-            <td >  
+            <td > 
+            <div style={{ textAlign:"center" }}> 
               {this.props.obj.marks}  
+              </div>  
             </td>
-            <td class=" offset-md-3" >  
+            <td class=" offset-md-3" > 
+              <div style={{ textAlign:"center" }}> 
               {this.props.obj.ld}  
+              </div> 
             </td>
             <td >  
+            <div style={{ textAlign:"center" }}>
               {this.props.obj.type}  
+              </div>
             </td>
           <td> 
             <Link to={`/AsComponent/${this.props.dataFromParent}`}>

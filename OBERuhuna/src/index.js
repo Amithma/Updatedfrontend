@@ -7,7 +7,7 @@ import FeedbackChart from './components/Feedback/FeedbackChart';
 
 
 
-ReactDOM.render(<div><App />,
+ReactDOM.render(<div><App />
 
    </div>, document.getElementById('root'));
 registerServiceWorker();

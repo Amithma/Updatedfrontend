@@ -24,11 +24,8 @@ export default class AsComponentList extends Component {
         .then(response => {  
       
           this.setState({ business: response.data });
-          console.log(json.data.Status);  
-          alert("Assignment Components"/*+this.props.match.params.value*/);   
-          debugger;  
-  
-        })  
+             
+           })  
         .catch(function (error) {  
           console.log(error);  
         })  
@@ -43,19 +40,7 @@ export default class AsComponentList extends Component {
       });  
     }  
     
-    render() {  
-     /* for ( var i=0;i<business.length;i++)
-      {
-        return this.state.business.map(LO=> {
-          return(
-              <tr key={LO.id}>
-                {this.state.total} = {parseInt(this.state.total)}+{parseInt(LO.marks)}
-              </tr> 
-              
-          )
-      } );
-      
-      }*/
+    render() {
 return (    
         <div>  
           <div class= "header">

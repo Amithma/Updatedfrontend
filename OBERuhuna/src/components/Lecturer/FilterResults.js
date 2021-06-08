@@ -3,8 +3,6 @@ import { Link} from 'react-router-dom'
 import axios from 'axios';  
 import Table2 from '../Lecturer/Table2';  
 import Logo from '../logo.jpg';
-//import "ka-table/style.scss";
-//import './style.scss';
 
 export default class FilterResults extends Component {  
 
@@ -17,7 +15,7 @@ export default class FilterResults extends Component {
           LOs:[],};  
     } 
     
-    
+    // Linking the google sheet for results upload
     async componentDidMount(){  
       debugger;  
       console.log(this.props.match.params.moduleId);
@@ -30,7 +28,7 @@ export default class FilterResults extends Component {
           console.log(error);  
         })  
 
-        const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.moduleId)  
+        const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.moduleId)  // get LO id for table header
         const LOs = res.data;
         this.setState({LOs});
         console.log(LOs)
@@ -46,7 +44,9 @@ export default class FilterResults extends Component {
       return this.state.LOs.map(LO=> {
           return(
               <th key={LO.loid}>
-                  <td>{LO.loid}</td>
+                  <td>
+                  <div style={{ textAlign:"rignt" }}>{LO.loid}</div>
+                  </td>
               </th>
           )
       } );
@@ -59,10 +59,10 @@ export default class FilterResults extends Component {
         <div  >
 
           <div class="column col-md-1 offset-md-5">
-            <h4 align="center">LO List</h4>  
+            <h4 align="center">Results of Module {this.props.match.params.moduleId}</h4>  
         </div>
         <div class="column col-md-2 offset-md-4">
-            <a href="https://docs.google.com/spreadsheets/d/14j_xmXiC0LeaxC1j0FWnK0nLSDQuy602mXN111lxZSA/edit#gid=0" target="_blank" >
+            <a href="https://docs.google.com/spreadsheets/d/14j_xmXiC0LeaxC1j0FWnK0nLSDQuy602mXN111lxZSA/edit#gid=0" target="_blank" > {/*Link for the google sheet */}
                   <button type="button"  className="btn btn-success">Add Results</button> 
             </a>
         </div>

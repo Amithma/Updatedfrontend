@@ -10,6 +10,7 @@ export default class Courselist extends Component {
     }  
     componentDidMount(){  
       debugger;  
+      // get courses from server
       axios.get('https://oberuhunaapi.azurewebsites.net//api/modules')  
         .then(response => {  
           this.setState({ business: response.data });  
@@ -33,7 +34,7 @@ export default class Courselist extends Component {
           <h4 align="center">Course List</h4>  
           <table className="table table-striped" style={{ marginTop: 10 }}>  
             <thead>  
-              <tr>  
+              <tr>  {/* Table headers for course list */}
                 <th>CourseId</th>  
                 <th>Name</th>  
                 <th>Credits</th>

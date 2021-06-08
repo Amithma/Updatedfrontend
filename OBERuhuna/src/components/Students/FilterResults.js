@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link} from 'react-router-dom'
 import axios from 'axios';  
 import Table2 from '../Lecturer/Table2';  
-import Logo from '../logo.jpg';
 
 
 export default class FilterResults extends Component {  
@@ -16,7 +15,7 @@ export default class FilterResults extends Component {
           LOs:[],};  
     } 
     
-    
+    // Get results from  the google sheet
     async componentDidMount(){  
       debugger;  
       console.log(this.props.match.params.moduleId);
@@ -28,7 +27,7 @@ export default class FilterResults extends Component {
         .catch(function (error) {  
           console.log(error);  
         })  
-
+        // Get LOids fo results table
         const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.moduleId)  
         const LOs = res.data;
         this.setState({LOs});
