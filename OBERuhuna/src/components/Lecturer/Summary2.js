@@ -9,7 +9,7 @@ export default class Summary extends Component {
   constructor(props) {  
       super(props);  
       this.state = {business1: [],
-        sum1 :0,sum2 :0,sum3 :0,sum4 :0,sum5 :0,sum6 :0,sum7 :0,sum8 :0,sum9 :0,sum10 :0,
+        sum1 :0,sum2 :0,sum3 :0,sum4 :0,sum5 :0,sum6 :0,sum7 :0,sum8 :0,sum9 :0,sum10 :0,   //initialize H,M,L count variables
         sum11 :0,sum12 :0,sum13 :0,sum14 :0,sum15 :0,sum16 :0,sum17 :0,sum18 :0,sum19 :0,
         sum20 :0, sum21 :0, sum22 :0, sum23 :0, sum24 :0, sum25 :0, sum26 :0, sum27 :0, sum28 :0, sum29 :0, sum30 :0,
         sum31 :0,sum32 :0,sum33 :0,sum34 :0,sum35 :0,sum36 :0,
@@ -18,7 +18,7 @@ export default class Summary extends Component {
     }  
     componentDidMount(){  
         debugger;  
-        axios.get('https://oberuhunaapi.azurewebsites.net//api/Modules?field=type2&value=TE')  
+        axios.get('https://oberuhunaapi.azurewebsites.net//api/Modules?field=type2&value=TE')  //Filter and get all the Core+GE modules
           .then(response => {  
             this.setState({ business1: response.data });  
             debugger;  
@@ -27,6 +27,7 @@ export default class Summary extends Component {
 
       }  
 
+    // set table row data and data pass to the sumcal function
     renderrows=() => {
         return this.state.business1.map(business1=> {
             return(
@@ -106,7 +107,7 @@ export default class Summary extends Component {
     }
 
     
-      
+  //calculate H count of PO1 column in summary Core+GE module table    
     sumcal1(business1){
   
         if(business1.s1=='H')
@@ -114,7 +115,7 @@ export default class Summary extends Component {
 
       }
 
-
+  //calculate M count of PO1 column in summary Core+GE module table  
       sumcal2(business1){
   
         if(business1.s1=='M')
@@ -123,7 +124,7 @@ export default class Summary extends Component {
        
       }
 
-
+  //calculate L count of PO1 column in summary Core+GE module table  
       sumcal3(business1){
   
         if(business1.s1=='L')
@@ -134,7 +135,7 @@ export default class Summary extends Component {
 
     /////////////////////////////////
 
-      
+    //calculate H count of PO2 column in summary Core+GE module table      
     sumcal4(business1){
   
         if(business1.s2=='H')
@@ -143,6 +144,7 @@ export default class Summary extends Component {
       }
 
 
+    //calculate M count of PO2 column in summary Core+GE module table 
       sumcal5(business1){
   
         if(business1.s2=='M')
@@ -152,6 +154,7 @@ export default class Summary extends Component {
       }
 
 
+    //calculate L count of PO2 column in summary Core+GE module table 
       sumcal6(business1){
   
         if(business1.s2=='L')
@@ -162,6 +165,7 @@ export default class Summary extends Component {
 
      ///////////////////////////////////////////////////////////
 
+    //calculate H count of PO3 column in summary Core+GE module table 
      sumcal7(business1){
   
         if(business1.s3=='H')
@@ -169,7 +173,7 @@ export default class Summary extends Component {
 
       }
 
-
+    //calculate M count of PO3 column in summary Core+GE module table 
       sumcal8(business1){
   
         if(business1.s3=='M')
@@ -178,7 +182,7 @@ export default class Summary extends Component {
        
       }
 
-
+    //calculate L count of PO3 column in summary Core+GE module table 
       sumcal9(business1){
   
         if(business1.s3=='L')
@@ -189,7 +193,7 @@ export default class Summary extends Component {
 
       ///////////////////////////////////////////////////////
 
-
+    //calculate H count of PO4 column in summary Core+GE module table 
       sumcal10(business1){
   
         if(business1.s4=='H')
@@ -197,7 +201,7 @@ export default class Summary extends Component {
 
       }
 
-
+    //calculate M count of PO4 column in summary Core+GE module table 
       sumcal11(business1){
   
         if(business1.s4=='M')
@@ -206,7 +210,7 @@ export default class Summary extends Component {
        
       }
 
-
+    //calculate L count of PO4 column in summary Core+GE module table 
       sumcal12(business1){
   
         if(business1.s4=='L')
@@ -216,6 +220,7 @@ export default class Summary extends Component {
       }
 
       ///////////////////////////////////////////////////////
+    //calculate H count of PO5 column in summary Core+GE module table 
       sumcal13(business1){
   
         if(business1.s5=='H')
@@ -223,7 +228,7 @@ export default class Summary extends Component {
 
       }
 
-
+    //calculate M count of PO5 column in summary Core+GE module table 
       sumcal14(business1){
   
         if(business1.s5=='M')
@@ -232,7 +237,7 @@ export default class Summary extends Component {
        
       }
 
-
+    //calculate L count of PO5 column in summary Core+GE module table 
       sumcal15(business1){
   
         if(business1.s5=='L')
@@ -242,7 +247,7 @@ export default class Summary extends Component {
       }
 
       ///////////////////////////////////////////////////////
-
+    //calculate H count of PO6 column in summary Core+GE module table 
       sumcal16(business1){
   
         if(business1.s6=='H')
@@ -250,7 +255,7 @@ export default class Summary extends Component {
 
       }
 
-
+    //calculate M count of PO6 column in summary Core+GE module table 
       sumcal17(business1){
   
         if(business1.s6=='M')
@@ -259,7 +264,7 @@ export default class Summary extends Component {
        
       }
 
-
+    //calculate L count of PO6 column in summary Core+GE module table 
       sumcal18(business1){
   
         if(business1.s6=='L')
