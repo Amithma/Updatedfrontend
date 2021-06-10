@@ -35,8 +35,7 @@ class AddAsComponent extends React.Component{
   p12:'',
   } 
   
-  }   
-
+  }
   async getoptions(){
     const res =await axios.get('https://oberuhunaapi.azurewebsites.net//api/LOes?id='+this.props.match.params.Moduleid);  //get LOs related to the modules
     const data =res.data
@@ -62,43 +61,42 @@ class AddAsComponent extends React.Component{
  }))
 
  this.setState({selectoptions: options})
+}   
+
+  async getpos(){
+    const res1 =await axios.get('https://oberuhunaapi.azurewebsites.net//api/POes1');  //get LOs related to the modules
+    const data =res1.data
+    console.log(res1.data);
+ const options = data.map(d=> ({
+ 
+    "label" :d.poid,
+    
+ }))
+
+ this.setState({selectoptions1: options})
 }
 
-async getpos(){
-  const res1 =await axios.get('https://oberuhunaapi.azurewebsites.net/api/POes1');     //get POID 
-  const data =res1.data
-console.log(res1.data)
-const options1 = data.map(p=> ({
- "po": p.poid,
-  })
-  )
-
-this.setState({selectoptions1: options1})
-}
 
 
+handleChange2 = (e)=> {  
+  this.setState({poid:e.label, 
 
-handleChange1 = (e)=> {  
-  this.setState({loid:e.label, id:e.num, mks:e.mks, nm:e.name,
-  p1:e.p1,
-  p2:e.p2,
-  p3:e.p3,
-  p4:e.p4,
-  p5:e.p5,
-  p6:e.p6,
-  p7:e.p7,
-  p8:e.p8,
-  p9:e.p9,
-  p10:e.p10,
-  p11:e.p11,
-  p12:e.p12,
  });  
   }
-
-  handleChange2 = (s)=> {  
-    this.setState({
-      poid: s.po,
-
+  handleChange1 = (e)=> {  
+    this.setState({loid:e.label, id:e.num, mks:e.mks, nm:e.name,
+    p1:e.p1,
+    p2:e.p2,
+    p3:e.p3,
+    p4:e.p4,
+    p5:e.p5,
+    p6:e.p6,
+    p7:e.p7,
+    p8:e.p8,
+    p9:e.p9,
+    p10:e.p10,
+    p11:e.p11,
+    p12:e.p12,
    });  
     }
 
@@ -106,7 +104,7 @@ componentDidMount ()
 {
   
   this.getpos()
- this.getoptions()
+  this.getoptions()
 }
 // creating new assignment components
   AddAsComponent=()=>{  
@@ -198,7 +196,8 @@ componentDidMount ()
         <FormGroup row>  
           <Label for="poid" sm={2}>POID</Label>  
           <Col sm={10}>  
-          <Select options={this.state.selectoptions1} onChange={this.handleChange2.bind(this)}/>
+         <Select options={this.state.selectoptions1} onChange={this.handleChange2.bind(this)}/>
+         {/*<Input type="text" name="poid" onChange={this.handleChange} value={this.state.poid} placeholder="Enter valid PO from bottom List" />*/}
           <p>You have selected <strong>{this.state.poid}</strong></p>
           </Col>  
         </FormGroup>  

@@ -16,7 +16,11 @@ class POTable extends Component {
     alert('Record deleted successfully!!');
     window.location.reload(false);  
      
-    }) 
+    })
+    
+    .catch((err) => {  //Error handling
+      console.error(err);
+    alert("Invalid operation! This PO is assigned to an assessment component.")}) 
    
     } 
      

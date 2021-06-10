@@ -50,9 +50,17 @@ p12:this.state.p12, })
       this.props.history.push('/LOlist') 
               }  
       )
+  .catch((err) => {
+    console.log(err);
+    
+  alert("Error!! Data Not saved. Please enter LOID and LO name")})
+      
+              
+
   }
 
   onClose = () => {
+    alert("Are you sure you want to cancel?"); 
     window.open("", "_self");
     window.close();
   }
@@ -97,9 +105,9 @@ p12:this.state.p12, })
 
 
         <FormGroup row>  
-          <Label for="loid" sm={2}>loid</Label>  
+          <Label for="loid" sm={2}>LOID</Label>  
           <Col sm={10}>  
-            <Input type="text" name="loid" onChange={this.handleChange} value={this.state.loid} placeholder="Enter LO Id" />  
+            <Input type="text" name="loid" onChange={this.handleChange} value={this.state.loid}  placeholder="Enter LO Id"  />  
           </Col>  
         </FormGroup>  
         <FormGroup row>  
