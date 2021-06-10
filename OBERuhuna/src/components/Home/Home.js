@@ -23,6 +23,13 @@ const Home = () => {
                         <h2><strong>OBE Curriculum Plannig Tool</strong></h2>
                     </div>
 
+       
+           <div class="col-md-2 offset-md-10 ">
+              <Link className="header" to='/login'  >
+                <button className="btn btn-success">Login</button>
+              </Link>
+        </div>
+         
       <div className="container">
 
      
@@ -45,11 +52,6 @@ const Home = () => {
 
       </div>
 
-        <div class="col-md-4 offset-md-4  ">
-          <Link className="header" to='/login'  >
-            <button>Login</button>
-          </Link>
-        </div>
 
 
     </div>
