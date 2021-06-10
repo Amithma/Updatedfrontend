@@ -18,7 +18,7 @@ const Home = () => {
     <div>
                  <div class= "header">
 
-                 <img src={Logo} alt ='weblogo' />
+                 <img src={Logo}  alt ='weblogo' />
                         <h1>Faculty of Engineering University of Ruhuna</h1>
                         <h2><strong>OBE Curriculum Plannig Tool</strong></h2>
                     </div>
